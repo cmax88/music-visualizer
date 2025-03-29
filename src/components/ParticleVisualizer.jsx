@@ -150,6 +150,20 @@ export default function ParticleVisualizer({ analyser, albumArt }) {
         animationFrameId = requestAnimationFrame(render);
       };
 
+      // 💧 Water Ripple Effect
+      const rippleCount = 3;
+      for (let i = 0; i < rippleCount; i++) {
+        const rippleRadius = pulseRadius + i * 30 + (frame % 30);
+        const rippleOpacity = 0.2 - i * 0.06;
+        const rippleHue = (pulseHue + i * 20) % 360;
+
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, rippleRadius, 0, Math.PI * 2);
+        ctx.strokeStyle = `hsla(${rippleHue}, 100%, 70%, ${rippleOpacity})`;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+      
       render();
     }
 
