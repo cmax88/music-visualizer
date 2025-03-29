@@ -1,0 +1,51 @@
+/* 🎚 VOLUME - Vertical slider on far left */
+.volume-slider {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  z-index: 20;
+  height: 200px;
+}
+
+.volume-slider input[type="range"] {
+  width: 200px; /* because it's rotated */
+  height: 14px;
+  background: linear-gradient(to right, #a080ff, #5090ff);
+  border-radius: 7px;
+  outline: none;
+  box-shadow: 0 0 10px #5090ffaa;
+}
+
+/* 🎛 SCRUB + FILE - Bottom center */
+.bottom-controls {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  gap: 12px;
+}
+
+.scrub-bar {
+  width: 400px;
+  height: 14px;
+  background: linear-gradient(to right, #a080ff, #5090ff);
+  border-radius: 7px;
+  outline: none;
+  box-shadow: 0 0 10px #5090ffaa;
+}
+
+.file-input {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  color: white;
+  padding: 4px 8px;
+  background: #222;
+  border: 1px solid #666;
+  border-radius: 6px;
+  cursor: pointer;
+}
